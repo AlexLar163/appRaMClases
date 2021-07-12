@@ -1,0 +1,53 @@
+<a
+  class="row justify-content-around"
+  style="width: 100vw; cursor: pointer"
+  routerLink="info"
+  routerLinkActive="active"
+>
+  <div
+    class="
+      flex-column
+      justify-content-center
+      border
+      rounded
+      col-2
+      m-1
+      p-0
+      position-relative
+    "
+    style="min-width: 300px; min-height: 300px"
+    *ngFor="let item of dataPersonajes"
+  >
+    <div
+      id="ass"
+      class="position-absolute w-100 h-100"
+      style="background-image: url({{ item.image }});
+      background-size: cover;
+      background-position: center;"
+    >
+      <div id="op" style="height: 100%; position: relative">
+        <ul
+          class="list-group list-group-flush m-1"
+          style="position: absolute; bottom: 0"
+        >
+          <li class="list-group-item p-1" style="background: none">
+            <span class="font-weight-bold">Name: </span> {{ item.name }}
+          </li>
+          <li class="list-group-item p-1" style="background: none">
+            <span class="font-weight-bold">Estado: </span> {{ item.status }}
+          </li>
+          <li class="list-group-item p-1" style="background: none">
+            <span class="font-weight-bold">Especie: </span> {{ item.species }}
+          </li>
+          <li class="list-group-item p-1" style="background: none">
+            <span class="font-weight-bold">Gender: </span> {{ item.gender }}
+          </li>
+          <li class="list-group-item p-1" style="background: none">
+            <span class="font-weight-bold">Origen: </span>
+            {{ item.origin.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</a>
